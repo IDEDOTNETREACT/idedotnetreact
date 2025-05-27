@@ -1,24 +1,19 @@
-function Square(n)
-{
-    let result=n*n;
-    return result;
+//functions with parameters and return values
+function Square(n) {
+    let result = n * n;
+    return result;// return the result
 }
-function Greet(name)
-{
-    let message='Hello '+name;
+let r = Square(5); // calling the function with parameter 5
+function Greet(name) {
+    let message = 'Hello ' + name;
     return message;
 }
-function IsEven(number)
-{
-   //let isEven=number%2==0?true:false;
-//    if(number%2==0)
-//    return true;
-//    else
-   return false;
-    //return isEven;
+function IsEven(number) {
+    let isEven = number % 2 == 0 ? true : false;
+    return isEven;
 }
-let result=Square(10);
+let result = Square(10);
 console.log(result);
-result=Greet('Dhoni');
+result = Greet('Dhoni');
 console.log(result);
-console.log(IsEven(110)==true?'Even':'Odd');
+console.log(IsEven(110) == true ? 'Even' : 'Odd');

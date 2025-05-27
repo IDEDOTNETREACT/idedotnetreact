@@ -8,5 +8,6 @@ let items=[
 ];
 console.log(items[0]);
 console.log(items[2]);
-console.log(items[5]());
-console.log(`ID:${items[4].Sid} Name:${items[4].Sname}`)
+console.log(items[5]()); // Calling the function stored in the array
+console.log(items[4].Sid); // Accessing property of the object in the array
+console.log(`ID:${items[4].Sid} Name:${items[4].Sname}`) // Template literal to format output

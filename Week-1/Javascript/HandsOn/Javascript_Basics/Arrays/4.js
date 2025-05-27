@@ -8,8 +8,9 @@ let students=[
     {Sid:7,Sname:'Meena',age:11},
     {Sid:8,Sname:'Monica',age:10},
 ]
+//here student is an object
 let student=students[0];
-//console.log(`ID:${student.Sid} Name:${student.Sname} Age:${student.age}`)
+console.log(`ID:${student.Sid} Name:${student.Sname} Age:${student.age}`)
 for(let student of students)
 {
     console.log(`ID:${student.Sid} Name:${student.Sname} Age:${student.age}`)

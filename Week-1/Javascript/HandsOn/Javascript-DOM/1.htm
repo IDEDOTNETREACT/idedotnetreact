@@ -13,7 +13,11 @@
         //access h1 in javascript
         let obj = document.getElementsByTagName('h1'); //return array of h1 objects
         let txt = obj[0].innerText; //innerText return text with in the h1
-        alert(txt);
+        alert(txt); //show alert with the text of h1
+        //change the text of h1 
+        obj[0].innerText = "Welcome to Javascript DOM Manipulation";
+        //change the style of h1
+        obj[0].style.color = "blue"; //change the color of h1 to blue
     </script>
 </body>
 
