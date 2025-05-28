@@ -17,6 +17,7 @@ class Dog extends Animal {
   }
 
   speak() {
+    super.speak(); // call the parent method
     console.log(`${this.name} barks.`);
   }
 }

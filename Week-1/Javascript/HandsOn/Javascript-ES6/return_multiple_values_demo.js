@@ -9,7 +9,7 @@ function returnmultiple()
     return [x,y];
 }
 var x,y;
-[x,y]=returnmultiple();
+[x,y]=returnmultiple(); // Destructuring assignment
 console.log(x)
 console.log(y)
 var q, w, e, r, t, y;
