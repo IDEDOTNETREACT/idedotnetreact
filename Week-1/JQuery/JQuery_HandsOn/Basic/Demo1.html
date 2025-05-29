@@ -3,19 +3,22 @@
 
 <head>
     <title></title>
-
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
         $(document).ready(function () {
-            $("p").text("Hello World!!!")
+            $("#b1").click(function () {
+                $("p").text("Hello World!!!") // Change the text of the first paragraph
+                $("p").css("color", "red") // Change the color of the first paragraph to red
+                $("p").css("font-size", "20px") // Change the font size of the first paragraph to 20px
+            })
+
         })
     </script>
 </head>
 
 <body>
     <p>Not loaded yet.</p>
+    <button id="b1">ClickMe</button>
 </body>
 
 </html>
