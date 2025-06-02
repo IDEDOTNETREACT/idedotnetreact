@@ -1,0 +1,10 @@
+--string functions
+select len('Hello World')
+select left('Hello',2)
+select right('Hello',2)
+select SUBSTRING('Good Morning',5,8)
+select Replace('Hello World','World','Sql')
+select ltrim('  Hello')
+select rtrim('Hello ')
+select UPPER('sql')
+select concat('Hello',' ','Sql users')
