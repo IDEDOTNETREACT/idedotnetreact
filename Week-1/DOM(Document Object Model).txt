@@ -1,0 +1,21 @@
+DOM(Document Object Model)
+document is a dom object
+Using dom we can access html elements,modify them,create and remove,traverse them in the document
+
+Events(event is an action which fires when something happens )
+=====
+Click
+change
+load
+focus
+blur
+mouseover
+mouseout
+keypress
+keydown
+submit
+https://cognizant.tekstac.com/theme/tekstac_theme/path_overview.php?id=382
+
+
+SQLSERVER Database express edition
+SqlServer Management Studio(SSMS) 
