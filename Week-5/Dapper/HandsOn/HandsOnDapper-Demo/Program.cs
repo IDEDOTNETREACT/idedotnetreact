@@ -10,7 +10,7 @@ namespace HandsOnDapper_Demo
         IDbConnection db;
         public Program()
         {
-            db = new SqlConnection(connectionString);
+            db = new SqlConnection(connectionString);// Initialize the database connection
         }
         
         private void GetById(int id)
@@ -127,7 +127,8 @@ namespace HandsOnDapper_Demo
             {
                 db.Open();
                 var sql = "DELETE FROM Product WHERE Id = @Id";
-                db.Execute(sql, Id);
+               // db.Execute(sql, Id);
+               db.Execute(sql, new { Id = Id });
                 Console.WriteLine("Product deleted successfully.");
             }
             catch (Exception)
@@ -251,47 +252,49 @@ namespace HandsOnDapper_Demo
                 Program program = new Program();
                 //program.AddProduct(new Product
                 //{
-                //    Id=1,
-                //    Name = "Sample Product",
+                //    Id = 4,
+                //    Name = "Bottle",
                 //    Price = 100,
                 //    Stock = 50
                 //});
-               // program.CountProducts();
-                //program.GetAll();
-                //program.GetAllProductsUsingProcedure();
-               // program.GetProductByIdUsingProcedure(1);
-               program.GetProductByIdAndNameUsingAnonymousParameters(1, "Sample Product");
+                program.CountProducts();
+                program.DeleteProduct(4);
+               program.GetAll();
+                //program.GetById(10);
+                //    //program.GetAllProductsUsingProcedure();
+                //   // program.GetProductByIdUsingProcedure(1);
+                //   program.GetProductByIdAndNameUsingAnonymousParameters(1, "Sample Product");
 
-                Console.WriteLine("Enter the Id of the product you want to fetch:");
-                if (int.TryParse(Console.ReadLine(), out int id))
-                {
-                    program.GetById(id);
-                }
-                else
-                {
-                    Console.WriteLine("Invalid Id entered.");
-                }
-                Console.WriteLine("Enter the Id of the product you want to delete:");
-                if (int.TryParse(Console.ReadLine(), out int deleteId))
-                {
-                    program.DeleteProduct(deleteId);
-                }
-                else
-                {
-                    Console.WriteLine("Invalid Id entered.");
-                }
-                Console.WriteLine("Enter the Id of the product you want to update:");
-                int Id=int.Parse(Console.ReadLine());
-                Console.WriteLine("Enter the new Price:");
-                int price = int.Parse(Console.ReadLine());
-                Console.WriteLine("Enter the new Stock:");
-                int stock = int.Parse(Console.ReadLine());
-                program.UpdateProduct(new Product
-                {
-                    Id = Id,
-                    Price = price,
-                    Stock = stock
-                });
+                //    Console.WriteLine("Enter the Id of the product you want to fetch:");
+                //    if (int.TryParse(Console.ReadLine(), out int id))
+                //    {
+                //        program.GetById(id);
+                //    }
+                //    else
+                //    {
+                //        Console.WriteLine("Invalid Id entered.");
+                //    }
+                //    Console.WriteLine("Enter the Id of the product you want to delete:");
+                //    if (int.TryParse(Console.ReadLine(), out int deleteId))
+                //    {
+                //        program.DeleteProduct(deleteId);
+                //    }
+                //    else
+                //    {
+                //        Console.WriteLine("Invalid Id entered.");
+                //    }
+                //    Console.WriteLine("Enter the Id of the product you want to update:");
+                //    int Id=int.Parse(Console.ReadLine());
+                //    Console.WriteLine("Enter the new Price:");
+                //    int price = int.Parse(Console.ReadLine());
+                //    Console.WriteLine("Enter the new Stock:");
+                //    int stock = int.Parse(Console.ReadLine());
+                //    program.UpdateProduct(new Product
+                //    {
+                //        Id = Id,
+                //        Price = price,
+                //        Stock = stock
+                //    });
 
             }
             catch (Exception ex)

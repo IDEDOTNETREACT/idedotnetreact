@@ -20,11 +20,11 @@ namespace HandsOnDapper_Demo
             db = new SqlConnection(connectionString);
         }
         //Dapper Dynamic Parameters
-        public async Task<IEnumerable<dynamic>> GetMoviesByGenreAsync(string genre)
+        public async Task<IEnumerable<Movie>> GetMoviesByGenreAsync(string genre)
         {
             var parameters = new DynamicParameters();
             parameters.Add("@Genre", genre);
-            return await db.QueryAsync("Select * from Movies where Genre = @Genre", parameters);
+            return await db.QueryAsync<Movie>("Select * from Movies where Genre = @Genre", parameters);
         }
         //Dapper Query with multile Parameters
         public async Task<IEnumerable<dynamic>> GetMoviesByDirectorAndRatingAsync(string director, decimal rating)

@@ -32,12 +32,12 @@ namespace HandsOnEFCodeFirst_Demo2.Repositories
 
         public async Task<IEnumerable<Movie>> GetAllMoviesAsync()
         {
-            return await db.QueryAsync<Movie>("Select * from Movies"); // Retrieve all movies from the database
+            return await db.QueryAsync<Movie>("Select * from Movies"); ; // Retrieve all movies from the database
         }
 
         public async Task<Movie?> GetMovieByIdAsync(int movieId)
         {
-            return await db.QuerySingleOrDefaultAsync<Movie>("Select * from Movies where MoveId=@MovieId", movieId); // Find a movie by its ID
+            return await db.QuerySingleOrDefaultAsync<Movie>("Select * from Movies where MovieId=@Id", new { Id=movieId }); // Find a movie by its ID
         }
   
         public async Task UpdateMovieAsync(Movie movie)

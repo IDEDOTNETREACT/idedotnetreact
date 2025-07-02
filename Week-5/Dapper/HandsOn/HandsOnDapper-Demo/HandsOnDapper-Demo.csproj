@@ -6,13 +6,12 @@
     <RootNamespace>HandsOnDapper_Demo</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <StartupObject>HandsOnDapper_Demo.Program</StartupObject>
+    <StartupObject>HandsOnDapper_Demo.MovieClient</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.66" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.2" />
-    <PackageReference Include="System.Data.SqlClient" Version="4.9.0" />
   </ItemGroup>
 
 </Project>
