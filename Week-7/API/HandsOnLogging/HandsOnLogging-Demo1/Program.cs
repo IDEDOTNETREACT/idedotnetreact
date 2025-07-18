@@ -1,7 +1,4 @@
-
-using HandsOnAPIWithDIUsingServiceLifetime.Services;
-
-namespace HandsOnAPIWithDIUsingServiceLifetime
+namespace HandsOnLogging_Demo1
 {
     public class Program
     {
@@ -10,10 +7,9 @@ namespace HandsOnAPIWithDIUsingServiceLifetime
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            // Choose ONE at a time:
-            //builder.Services.AddSingleton<IGuidService, GuidService>();
-            //builder.Services.AddScoped<IGuidService, GuidService>();
-            builder.Services.AddTransient<IGuidService, GuidService>();
+            builder.Services.AddLogging(); // Add logging services
+            //builder.Logging.AddConsole();// Add console logging
+           builder.Logging.AddDebug(); // Add debug logging
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
