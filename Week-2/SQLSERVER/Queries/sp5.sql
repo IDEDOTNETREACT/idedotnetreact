@@ -1,20 +1,15 @@
-alter procedure sp_AddEmployee(@Id varchar(5),@Name varchar(20),@jd date,@desig varchar(20),@salary int)
+create procedure sp_AddEmployee(@id char(5),@name varchar(20),@jd date,@salary int)
 as
 begin
 begin try
-if ((select count(*) from Employee where Id=@Id)=0)
-begin
-insert into Employee(Id,Name,JoinDate,Designation,Salary) values(@Id,@Name,@jd,@desig,@salary)
-end
+if(exists(select * from Employee where EmployeeId=@id))
+print 'Employee with '+@id+' id already exist'
 else
-print 'Employee Already exist with Id '+@Id
+insert into Employee(EmployeeId,Name,JoinDate,Salary) values(@id,@name,@jd,@salary)
 end try
 begin catch
-select ERROR_MESSAGE()
+select ERROR_MESSAGE() as Message
 end catch
 end
-Go
-exec sp_AddEmployee 'E0001','Ram','12.2.2024','Programmer',30000
-exec sp_AddEmployee 'E0010','Ram','12.2.2024','Programmer',30000
+exec sp_AddEmployee 'E0965','Ram','2.12.2023',33000
 select * from Employee
-drop procedure sp_sum --drop the procedure

@@ -1,13 +1,18 @@
---create stored procedure
+--Stored Procedure is a collection of sql statemtns
 create procedure sp_sum(@a int,@b int)
 as
 begin
---write quries here
+begin try
 declare @result int
 set @result=@a+@b
-select @result as [Output]
+select @result
+end try
+begin catch
+select 'Error Occured'
+select ERROR_MESSAGE()
+end catch
 end
 Go
---execute procedure
-exec sp_sum 12,10
-exec sp_sum @b=15,@a=10 --named parameters
+--execute stored procedure
+exec sp_sum 23,34
+exec sp_sum @b=43,@a=23

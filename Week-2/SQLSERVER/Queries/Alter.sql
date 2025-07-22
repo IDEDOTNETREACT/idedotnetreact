@@ -1,12 +1,12 @@
--- alter commands
--- use to add new column, drop column,chage datatype, add constraint
-sp_help Person
+--Alter table
+sp_help person
 --add column
-alter table Person add city varchar(20) null
+alter table Person add State varchar(10),City varchar(20)
+--drop column
+alter table Person drop column Address
 --chage datatype
 alter table Person alter column Id varchar(20) not null
---drop column
-alter table Person drop column [address]
-sp_helpconstraint Person
---add primary key constraint to the Id
-alter table Person add constraint Pk_Id Primary key(Id)
+--add constraint
+alter table Person add constraint pk_id primary key(Id)
+--drop constraint
+alter table Person drop constraint pk_id

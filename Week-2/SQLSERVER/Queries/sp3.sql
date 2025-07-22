@@ -1,9 +1,20 @@
---wriete procedure to add new employee
-create procedure sp_person(@id varchar(20),@Name varchar(20),@city varchar(20)='Delhi')
+alter procedure sp_square(@n varchar(20))
 as
 begin
-insert into Person values(@id,@Name,@city)
+begin try
+declare @result int
+set @result=cast(@n as int)*cast(@n as int)
+return @result
+end try
+begin catch
+select ERROR_MESSAGE() as Message
+select ERROR_PROCEDURE() as ProcedureName
+select ERROR_NUMBER() as ErrorNumber
+select ERROR_LINE() as ErrorLine
+end catch
 end
-exec sp_person 1,'Ram','Pune'
-exec sp_person 2,'Sita'
-select * from Person
+Go
+
+declare @result int
+exec @result=sp_square 'abc'
+print @result

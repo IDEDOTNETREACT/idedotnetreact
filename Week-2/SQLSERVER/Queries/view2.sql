@@ -1,10 +1,13 @@
-create view vw_employeeproject
+--Create view with columns from multipls tables
+alter view vw_EmployeeProject
 as
-select e.id,e.name,e.designation,p.projectname from 
-Employee e join Project p
-on e.ProjectCode=p.ProjectCode
-select * from vw_employeeproject
-select name,projectname from vw_employeeproject
-select * from vw_employeeproject where ProjectName='ECommerce'
-sp_helptext vw_employee
-sp_helptext vw_employeeproject
+select Employee.EmployeeId,Employee.Name,Project.ProjectName,Project.ProjectCode
+from Employee join Project on Employee.ProjectCode=Project.ProjectCode
+Go
+select * from vw_EmployeeProject
+select * from vw_EmployeeProject where ProjectName='Lenovo'
+select * from vw_EmployeeProject order by Name asc
+select count(*) from vw_EmployeeProject
+
+drop view vw_EmployeeProject
+sp_helptext vw_EmployeeProject

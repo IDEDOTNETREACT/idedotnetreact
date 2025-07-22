@@ -1,14 +1,14 @@
---create varible
+--create variable
 declare @id int
-declare @name varchar(20)
-declare @order_date date
---assign value to the variable
-set @id=3240
-set @name='Virat'
-set @order_date='2018.2.23'
+declare @product varchar(10)
+declare @dob date
+--set value to variable
+set @id=430834
+set @product='Bottle'
+set @dob='2.23.2000'
 --assing multiple variable values
-select @id=3409832,@name='Sachin',@order_date=getdate()
+select @id=3093,@product='key chain',@dob='2019.2.23'
 print @id
-print @name
-print @order_date
+print @product
+print @dob
 Go

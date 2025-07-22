@@ -1,9 +1,10 @@
 select * from Employee
-create view vw_employee
+create view vw_Employee
 as
-select Id,Name,Joindate,Designation from Employee
+--mention columns
+select EmployeeId,Name,JoinDate,Designation from Employee
 Go
-select * from vw_employee
-select Id,Name from vw_employee
-select * from vw_employee where Designation='Programmer'
-update vw_employee set Designation='Sr Programmer' where id='E0003'
+select * from vw_Employee
+select EmployeeId,Name from vw_Employee
+select * from vw_Employee where Designation='Programmer'
+update vw_Employee set Designation='Sr Programmer' where EmployeeId='E3123'
