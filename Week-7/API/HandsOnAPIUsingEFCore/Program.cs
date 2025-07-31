@@ -7,6 +7,7 @@ namespace HandsOnAPIUsingEFCore
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            //Remove Json Serialization and Add XML Serialization
 
             // Add services to the container.
             // Configure Entity Framework Core with SQL Server
@@ -23,6 +24,11 @@ namespace HandsOnAPIUsingEFCore
             // AddTransient means a new instance is created each time it is requested
             //builder.Services.AddTransient<IFlightContract, FlightRepository>();
             builder.Services.AddControllers();
+            //Ensure that the XML serialization is used instead of JSON serialization
+            //builder.Services.AddControllers(
+            //    options => options.OutputFormatters.RemoveType<Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter>()
+            //    ).AddXmlSerializerFormatters(); // This adds XML serialization support
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -35,12 +41,21 @@ namespace HandsOnAPIUsingEFCore
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+            else if (app.Environment.IsProduction())
+            {
+                app.UseSwagger();
+                app.UseSwaggerUI();
 
+            }
             app.UseAuthorization();
 
 
-            app.MapControllers();
+            app.MapControllers(); // This maps the controller routes to the application
 
+            //app.MapControllerRoute(
+            //    name: "default",
+            //    pattern: "{controller=Flight}/{action=GetAllFlights}/{id?}"
+            //);
             app.Run();
         }
     }
