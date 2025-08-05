@@ -3,17 +3,11 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Demo1 from './Demo1';
-import Demo2 from './Demo2';
-import Count from './Count';
-import Demo3 from './Demo3';
-import Demo4 from './Demo4';
-import Demo5 from './Demo5';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Demo5 />
+    <App />
   </React.StrictMode>
 );
 
