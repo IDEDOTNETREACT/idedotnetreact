@@ -4,10 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import ViewFlights from './view-flights';
+import AddFlight from './AddFlight';
+import EditFlight from './EditFlight';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ViewFlights />
+    {/* <ViewFlights /> */}
+    {/* <AddFlight /> */}
+    <EditFlight />
   </React.StrictMode>
 );
 
