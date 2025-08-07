@@ -13,7 +13,7 @@ function AddFlight() {
             'seats': seats
         }
         console.log(flight);
-        axios.post('http://localhost:5184/api/Flight/AddFligh', flight)
+        axios.post('http://localhost:5184/api/Flight/AddFlight', flight)
             .then((response) => {
                 console.log(response);
             })
